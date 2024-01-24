@@ -1,0 +1,83 @@
+/* styles.css */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+}
+
+.px-4.pt-5.pb-5.my-5.text-center.border-bottom {
+  min-height: 100vh;
+  padding:0px;
+  margin-bottom:0px
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.navbar-nav .nav-link {
+  color: #007bff;
+}
+
+.box {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.box form input {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #f8f9fa;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.list-inline-item {
+  margin-right: 20px;
+}
+
+.text-muted {
+  color: #6c757d;
+}
+
+/* Add more styles as needed for your specific design */

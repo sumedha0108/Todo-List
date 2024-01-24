@@ -1,0 +1,44 @@
+{% include "header.html" %}
+
+<main class="container-fluid px-4 pt-5 pb-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">Todo List</h1>
+
+    <form method="post" action="{{ url_for('add_todo') }}" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="new_todo" class="form-control" placeholder="New Todo" required>
+            <button type="submit" class="btn btn-primary">Add Todo</button>
+        </div>
+    </form>
+
+    <form method="post" action="{{ url_for('update_todos') }}" class="mb-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for todo in todos %}
+                    <tr>
+                        <td>{{ todo.content }}</td>
+                        <td>
+                            <select name="status_{{ todo.id }}">
+                                <option value="todo" {% if todo.status == 'todo' %}selected{% endif %}>To Do</option>
+                                <option value="in-progress" {% if todo.status == 'in-progress' %}selected{% endif %}>In Progress</option>
+                                <option value="completed" {% if todo.status == 'completed' %}selected{% endif %}>Completed</option>
+                            </select>
+                        </td>
+                        <td><a href="{{url_for('edit_todo', todo_id=todo.id) }}" name="edited-todo">Edit</a></td>
+                        <td><a href="{{url_for('delete_todo', todo_id=todo.id) }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Update Todos</button>
+    </form>
+</main>
+
+{% include "footer.html" %}

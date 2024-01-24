@@ -1,0 +1,25 @@
+{% include "header.html" %}
+
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">Welcome to Your Todo Application!</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Organize your tasks effortlessly with our intuitive Todo Application. Keep track of your to-dos,
+        mark them as completed, and edit them as needed. Whether you're planning your day or managing
+        ongoing projects, our application makes task management simple and efficient. Log in to get started
+        or sign up if you're new here. Your tasks are just a click away!</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          {% if not logged_in: %}
+          <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4 me-sm-3">Login</a>
+          {% else: %}
+          <a href="{{ url_for('todolist') }}" class="btn btn-primary btn-lg px-4 me-sm-3">My Tasks</a>
+          {% endif %}
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <!--<div class="container px-5">
+        <img src="static/img1.jpeg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="100%" height="auto" loading="lazy">
+      </div> -->
+    </div>
+  </div>
+
+{% include "footer.html" %}
